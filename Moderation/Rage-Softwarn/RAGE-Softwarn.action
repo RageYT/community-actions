@@ -24,8 +24,8 @@
     {
       "fallback": true,
       "type": "channel",
-      "message": "{set;arg1;{find;{args};(.*?)(?:\\s?)(?:\\|)(?:\\s?)(.*?$);1}}\n{set;arg2;{find;{args};(.*?)(?:\\s?)(?:\\|)(?:\\s?)(.*?$);2}}\n\n{a!ae;--field1name=\"Reason\";--field1value=\"{get;arg2}\";--field1inline;--field2name=\"Operator\";--field2value=\"{user.mention}\";--field2inline;--description=\"{get;arg1}, you have been soft warned. This means an infraction was not given but you were told by a Staff member to quit with what you are doing.\\n\\nIf you continue, a infraction will be added onto your profile and you will have your first warn.\";--message=\"{user.mention;{get;arg1}}\"}",
-      "id": "5ed82b028f44120026ab4675"
+      "message": "{if;{catch;{user.id;{args;1}};Error};!=;Error;{a!ae;--field1name=\"Reason\";--field1value=\"{args;2;infinity}\";--field1inline;--field2name=\"Operator\";--field2value=\"{user.mention}\";--field2inline;--description=\"{args;1}, you have been soft warned. This means an infraction was not given but you were told by a Staff member to quit with what you are doing.\\n\\nIf you continue, a infraction will be added onto your profile and you will have your first warn.\";--message=\"{user.mention;{args;1}}\"};This is not a valid user, please provide an appropriate user tag.}",
+      "id": "5ed833d38f44120026ab4784"
     }
   ],
   "formatVersion": "1.2"
